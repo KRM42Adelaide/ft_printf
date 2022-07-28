@@ -7,7 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:06:37 by kmachaka          #+#    #+#             */
 /*   Updated: 2022/07/26 12:14:56 by kmachaka         ###   ########.fr       */
-/*                                                                            */
+/*                                                                             */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
@@ -17,7 +17,7 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		count;
 	va_list	args;
-
+j/l
 	i = 0;
 	count = 0;
 	va_start(args, format);
