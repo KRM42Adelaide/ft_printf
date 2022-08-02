@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 09:04:11 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/02 09:11:14 by kmachaka         ###   ########.fr       */
+/*   Created: 2022/08/02 09:49:14 by kmachaka          #+#    #+#             */
+/*   Updated: 2022/08/02 09:52:25 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_char(char c)
+int	ft_printf_ptr(void *ptr)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	count;
+
+	count = 0;
+	ft_putstr_fd("0x", 1);
+	count += 2;
+	count += ft_printf_hex((size_t)ptr, "012345678abcdef");
+	return (count);
 }

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 09:04:11 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/02 09:11:14 by kmachaka         ###   ########.fr       */
+/*   Created: 2022/08/02 09:34:01 by kmachaka          #+#    #+#             */
+/*   Updated: 2022/08/02 15:28:34 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_char(char c)
+int	ft_printf_hex(size_t num, char *base)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	count;
+
+	count = 0;
+	if (num >= 16)
+		count += ft_printf_hex(num / 16, base);
+	count += ft_printf_char(base[num % 16]);
+	return (count);
 }
