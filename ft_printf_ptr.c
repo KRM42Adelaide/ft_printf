@@ -6,7 +6,7 @@
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:49:14 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/02 09:52:25 by kmachaka         ###   ########.fr       */
+/*   Updated: 2022/08/03 15:34:51 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int	ft_printf_ptr(void *ptr)
 	count = 0;
 	ft_putstr_fd("0x", 1);
 	count += 2;
-	count += ft_printf_hex((size_t)ptr, "012345678abcdef");
+	count += ft_printf_hex((size_t)ptr, "0123456789abcdef");
 	return (count);
 }
