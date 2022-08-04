@@ -6,15 +6,13 @@
 #    By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/26 12:27:45 by kmachaka          #+#    #+#              #
-#    Updated: 2022/08/03 15:33:34 by kmachaka         ###   ########.fr        #
+#    Updated: 2022/08/04 17:57:06 by kmachaka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDE = -I .
-ARCHIVE = ar rc
 
 SRCS = ft_printf.c \
 	   ft_printf_char.c \
@@ -32,8 +30,8 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(INCLUDE) -c $(SRCS)
-	$(ARCHIVE) $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -c $(SRCS)
+	ar rc  $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 clean:

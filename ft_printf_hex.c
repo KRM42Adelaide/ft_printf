@@ -6,7 +6,7 @@
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:34:01 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/03 17:55:37 by kmachaka         ###   ########.fr       */
+/*   Updated: 2022/08/04 17:22:14 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ int	ft_printf_hex(size_t num, char *base)
 		count += ft_printf_hex(num / 16, base);
 	count += ft_printf_char(base[num % 16]);
 	return (count);
+}
+
+int	ft_puthex(unsigned int num, char *base)
+{
+	return (ft_printf_hex(num, base));
 }

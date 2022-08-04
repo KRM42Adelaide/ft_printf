@@ -6,7 +6,7 @@
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:06:00 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/02 09:19:14 by kmachaka         ###   ########.fr       */
+/*   Updated: 2022/08/04 17:16:12 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_type(const char c, va_list args)
 	if (c == 'u')
 		return (ft_printf_u(va_arg(args, int)));
 	if (c == 'x')
-		return (ft_printf_hex(va_arg(args, int), "0123456789abcdef"));
+		return (ft_puthex(va_arg(args, int), "0123456789abcdef"));
 	if (c == 'X')
-		return (ft_printf_hex(va_arg(args, int), "0123456789abcdef"));
+		return (ft_puthex(va_arg(args, int), "0123456789ABCDEF"));
 	if (c == '%')
 		return (ft_printf_char('%'));
 	else
