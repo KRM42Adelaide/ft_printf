@@ -6,11 +6,17 @@
 /*   By: kmachaka <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:06:37 by kmachaka          #+#    #+#             */
-/*   Updated: 2022/08/02 09:09:04 by kmachaka         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:28:02 by kmachaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	is_type(char c)
+{
+	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+		|| c == 'u' || c == 'x' || c == 'X' || c == '%');
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -23,17 +29,14 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[++i])
-		{
-			count += ft_type(format[i], args);
-			i++;
-		}
-		if (format[i] && format[i] != '%')
+		if (format[i] == '%' && is_type(format[i + 1]))
+			count += ft_type(format[++i], args);
+		else if (format[i] != '%')
 		{
 			ft_printf_char(format[i]);
-			i++;
 			count++;
 		}
+		i++;
 	}
 	va_end(args);
 	return (count);
